@@ -1,17 +1,18 @@
 console.log("hello show Countries");
+import * as Handlebars from "handlebars";
 
+import debounce from 'lodash.debounce';
 import API from './fetchCountries';
 import getRefs from './get-refs';
 import onAlertNotification from './notification';
-import debounce from 'lodash.debounce';
-// import countriesListTmpl from '../templates/countties-list-tmpl.hbs';
-// import countryTempl from '../templates/country-tmpl.hbs';
+import '../templates/country-tmpl.hbs';
 
 const refs = getRefs();
 
 refs.inputEl.addEventListener('input', debounce(onSearchCountries, 500));
 refs.inputEl.addEventListener('change', debounce(onSearchCountries, 500));
 refs.inputEl.addEventListener('keydown', onControlInput);
+
 
 
 function onControlInput(e) {    
