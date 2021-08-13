@@ -4,8 +4,8 @@ import API from './fetchCountries';
 import getRefs from './get-refs';
 import onAlertNotification from './notification';
 import debounce from 'lodash.debounce';
-import countriesListTmpl from '../templates/countties-list-tmpl.hbs';
-import countryTempl from '../templates/country-tmpl.hbs';
+// import countriesListTmpl from '../templates/countties-list-tmpl.hbs';
+// import countryTempl from '../templates/country-tmpl.hbs';
 
 const refs = getRefs();
 
@@ -49,11 +49,11 @@ function showResultSearchCountries(countries) {
         }
 
         if (countries.length > 1 && countries.length < 11) {
-            // const countriesHTML = countries
-            //     .map((country) => `<h1>${country.name}</h1>`)
-            //     .join('')
-            // refs.countriesList.innerHTML = countriesHTML;
-            refs.countriesList.innerHTML = countriesListTmpl(country);
+            const countriesHTML = countries
+                .map((country) => `<h1>${country.name}</h1>`)
+                .join('')
+            refs.countriesList.innerHTML = countriesHTML;
+            // refs.countriesList.innerHTML = countriesListTmpl(country);
             refs.countriesList.addEventListener('click', onSelectCountry)
                      
         } if (countries.length === 1) {            
