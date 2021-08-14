@@ -1,6 +1,7 @@
 body {
   color: #454545;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
 }
 ul {
   margin: 0;
@@ -49,6 +50,7 @@ section {
   }
   &_info {
     display: flex;
+    cursor: not-allowed;
   }
   &_desc {
     padding-left: 60px;
