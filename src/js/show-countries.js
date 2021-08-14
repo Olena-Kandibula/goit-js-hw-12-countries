@@ -32,8 +32,7 @@ function onFetchError(eror) {
     refs.countriesList.innerHTML = '';   
 }
 
-function showResultSearchCountries(countries) {    
-        console.log(countries)
+function showResultSearchCountries(countries) {            
     
         if (countries.length > 10) {                       
             onAlertNotification()                    
@@ -44,11 +43,11 @@ function showResultSearchCountries(countries) {
             refs.countriesList.style.pointerEvents = 'auto';
             refs.countriesList.addEventListener('click', onSelectCountry)
                      
-    } if (countries.length === 1) {
-            console.log(refs.inputEl.value)
+    } if (countries.length === 1) {        
         refs.countriesList.innerHTML = countriesTmpl(countries);       
         refs.countriesList.style.pointerEvents = 'none';
-        onClearCountriesInput()        
+        onClearCountriesInput()
+        refs.inputEl.addEventListener('keydown', onControlDelete);
         }                
 } 
     
@@ -64,3 +63,7 @@ function onClearCountriesInput() {
 }
 
 
+function onControlDelete(e) {    
+    if ((this.value.length === 1 && e.which === 8))       
+        e.preventDefault();   
+}
