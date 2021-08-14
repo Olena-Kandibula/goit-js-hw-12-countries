@@ -1,17 +1,19 @@
-<div class="country_name">
-    <h1 class="caption">{{name}}</h1>
+{{#each this}}
+<div class ="country_name">
+    <h1>{{name}}</h1>
 </div>
-<div class="sub">
-    <div>
-        <h2 class="country_capital">Capital: {{capital}}</h2>
-        <p>Population: {{population}}</p>
-        <p>Languages:</p>
-        <ul>
-            {{#each languages}}
-            <li>{{this.name}}</li>
-            <br>
-            {{/each}}
-        </ul>
+<div class="country_info">
+    <div class="country_desc">
+        <p class="country_item"><span class="item-title">Capital:</span> {{capital}}</p>
+        <p><span class="item-title">Population:</span> {{population}}</p>
+        <p><span class="item-title">Languages:</span>
+            <ul class="country_lang">
+                {{#each languages}}
+                <li>{{name}}</li>
+                {{/each}}
+            </ul>
+        </p>
     </div>
-    <img src="{{flag}}" alt='photo {{name}}' width="300">
+    <aside><img src="{{flag}}" alt='photo {{name}}' width="300"></aside>
 </div>
+{{/each}}

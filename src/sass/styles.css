@@ -1,4 +1,39 @@
 body {
-  background-color: rgb(181, 236, 148);
-  color: #333333;
+  color: #454545;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+section {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 100px 60px 0;
+  text-align: center;
+  background: repeat center/3% url('../images/poin2.jpg');
+}
+
+.country_name {
+  font-size: 32px;
+  /* color: blue; */
+}
+
+.country_input {
+  border-color: #999999;
+  width: 90%;
+  padding: 30px;
+  /* border-radius: 3%; */
+}
+
+footer {
+  margin-top: auto;
 }

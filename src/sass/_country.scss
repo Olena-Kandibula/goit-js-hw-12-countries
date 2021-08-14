@@ -1,0 +1,67 @@
+body {
+  color: #454545;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+section {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 100px 60px 0;
+  text-align: center;
+  background: repeat center/3% url('../images/poin2.jpg');
+}
+
+.country {
+  &_name {
+    font-size: 32px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  &_input {
+    width: 90%;
+    padding: 30px;
+    margin-bottom: 24px;
+  }
+
+  &_result {
+    text-align: left;
+    font-size: 32px;
+    line-height: 120%;
+  }
+
+  &_list {
+    margin-left: 80px;
+  }
+
+  &_item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &_info {
+    display: flex;
+  }
+  &_desc {
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+  &_lang {
+    margin-left: 40px;
+  }
+}
+
+.item-title {
+  font-weight: bold;
+}
+footer {
+  margin-top: auto;
+}
