@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce';
 import API from './fetchCountries';
 import getRefs from './get-refs';
-import onAlertNotification from './notification';
+import {onAlertNotification, onAlertErrorInput } from './notification';
 import countriesListTmpl from '../templates/countries-list-tmpl.hbs';
 import countriesTmpl from'../templates/country-tmpl.hbs';
 
@@ -28,20 +28,23 @@ function onSearchCountries(e) {
         .catch(onFetchError)
 }
 
-function onFetchError(eror) {     
-    refs.countriesList.innerHTML = '';   
+function onFetchError(error) {     
+    refs.countriesList.innerHTML = '';
+     refs.inputEl.value = '';
+    onAlertErrorInput()
 }
 
 function showResultSearchCountries(countries) {            
     
         if (countries.length > 10) {                       
-            onAlertNotification()                    
+            onAlertNotification()            
         }
 
         if (countries.length > 1 && countries.length < 11) {         
             refs.countriesList.innerHTML = countriesListTmpl(countries);
             refs.countriesList.style.pointerEvents = 'auto';
             refs.countriesList.addEventListener('click', onSelectCountry)
+            return
                      
     } if (countries.length === 1) {        
         refs.countriesList.innerHTML = countriesTmpl(countries);       
@@ -59,7 +62,7 @@ function onSelectCountry(e) {
 
 
 function onClearCountriesInput() {
-    refs.inputEl.value = ' '
+    refs.inputEl.value = '';
 }
 
 

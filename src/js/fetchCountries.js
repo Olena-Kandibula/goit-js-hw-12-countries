@@ -1,5 +1,4 @@
-const BASE_URL = 'https://restcountries.eu/rest/v2'
-
+const BASE_URL = 'https://restcountries.eu/rest/v2';
 
     function fetchCountries(searchQuery) {
 
@@ -11,5 +10,8 @@ const BASE_URL = 'https://restcountries.eu/rest/v2'
         })        
     }              
 
-
+function onFetchError(eror) {     
+    refs.countriesList.innerHTML = '';
+    onAlertErrorInput
+}
 export default {fetchCountries}
