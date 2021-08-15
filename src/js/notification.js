@@ -20,4 +20,4 @@ function onAlertErrorInput() {
         });
 }
 
-export {onAlertNotification, onAlertErrorInput}
+export { onAlertNotification, onAlertErrorInput };
